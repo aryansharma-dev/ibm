@@ -1,66 +1,23 @@
 {
-  "name": "@mongodb-js/saslprep",
-  "description": "SASLprep: Stringprep Profile for User Names and Passwords, rfc4013",
-  "keywords": [
-    "sasl",
-    "saslprep",
-    "stringprep",
-    "rfc4013",
-    "4013"
-  ],
-  "author": "Dmitry Tsvettsikh <me@reklatsmasters.com>",
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "dist/node.js",
-  "bugs": {
-    "url": "https://jira.mongodb.org/projects/COMPASS/issues",
-    "email": "compass@mongodb.com"
-  },
-  "homepage": "https://github.com/mongodb-js/devtools-shared/tree/main/packages/saslprep",
-  "version": "1.1.9",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mongodb-js/devtools-shared.git"
-  },
-  "files": [
-    "dist"
-  ],
-  "license": "MIT",
-  "exports": {
-    "browser": {
-      "types": "./dist/browser.d.ts",
-      "default": "./dist/browser.js"
-    },
-    "import": {
-      "types": "./dist/node.d.ts",
-      "default": "./dist/.esm-wrapper.mjs"
-    },
-    "require": {
-      "types": "./dist/node.d.ts",
-      "default": "./dist/node.js"
-    }
-  },
-  "types": "./dist/node.d.ts",
+  "name": "secure-notepad-app",
+  "version": "1.0.0",
+  "description": "Secure notepad web application with MongoDB-backed notes",
+  "main": "index.js",
   "scripts": {
-   "gen-code-points": "echo 'gen-code-points skipped'",
-    "bootstrap": "npm run compile",
-    "prepublishOnly": "npm run compile",
-    "compile": "npm run gen-code-points",
-    "typecheck": "echo 'typecheck skipped'",
-    "eslint": "echo 'eslint skipped'",
-    "prettier": "echo 'prettier skipped'",
-    "lint": "npm run eslint && npm run prettier",
-    "depcheck": "echo 'depcheck skipped'",
-    "check": "npm run typecheck && npm run lint && npm run depcheck",
-    "check-ci": "npm run check",
-    "test": "node test.js",
-    "test-cov": "npm run test",
-    "test-watch": "npm run test",
-    "test-ci": "npm run test",
-    "reformat": "echo 'reformat skipped'"
+    "start": "node index.js",
+    "test": "node test.js"
   },
+  keywords": [
+    "notes",
+    "express",
+    "mongo",
+    "ejs"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "sparse-bitfield": "^3.0.3"
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0"
   }
 }

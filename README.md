@@ -78,4 +78,12 @@ Cloud deployment (Render, Vercel)
 
 CI/CD pipeline integration
 
+🚀 Running the project locally
 
+1. Ensure you have a local MongoDB instance available at `mongodb://127.0.0.1:27017/todolist`.
+2. Install the project dependencies:
+   - `npm install`
+3. Start the development server:
+   - `npm start`
+
+The application will be available at `http://localhost:5000` and will render the EJS views defined in the `views` directory.

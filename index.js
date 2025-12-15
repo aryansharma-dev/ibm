@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const getConnect = require('./dbconfig');
 
 const app = express();
@@ -20,9 +19,8 @@ app.post('/signup', express.urlencoded({ extended: false }), async (req, res) =>
 
         if (username && email && password) {
             const userSchema = await getConnect();
-            const UserModel = mongoose.model('listdata', userSchema);
+            const UserModel = await getConnect();
             await UserModel.create({ name: username, email, password });
-            mongoose.models = {};
 
             console.log('Signup successful');
             return res.redirect('/');
@@ -46,10 +44,8 @@ app.post('/login', express.urlencoded({ extended: false }), async (req, res) => 
     try {
         const username = req.body.t1;
         const password = req.body.t2;
-        const userSchema = await getConnect();
-        const UserModel = mongoose.model('listdata', userSchema);
+        const UserModel = await getConnect();
         const existingUser = await UserModel.findOne({ name: username });
-        mongoose.models = {};
 
         if (!existingUser) {
             const msg = 'Please Enter Your Details';
@@ -71,10 +67,8 @@ app.post('/login', express.urlencoded({ extended: false }), async (req, res) => 
 });
 
 app.get('/', async (req, res) => {
-    const todoListSchema = await getConnect();
-    const TodoModel = mongoose.model('listdata', todoListSchema);
+    const TodoModel = await getConnect();
     const data = await TodoModel.find({});
-    mongoose.models = {};
     res.render('main', { data });
 });
 
@@ -84,10 +78,8 @@ app.get('/Create', async (req, res) => {
         const name = req.query.t0;
         const topic = req.query.t1;
         const notes = req.query.t2;
-        const todoListSchema = await getConnect();
-        const TodoModel = mongoose.model('listdata', todoListSchema);
+        const TodoModel = await getConnect();
         await TodoModel.create([{ id, name, topic, notes }]);
-        mongoose.models = {};
         const msg = 'Saved Successfully (*_*)';
         return res.render('create', { msg });
     }
@@ -99,11 +91,9 @@ app.get('/Create', async (req, res) => {
 app.get('/del', async (req, res) => {
     try {
         const uid = req.query.uid;
-        const db = await getConnect();
-        const Collection = mongoose.model('listdata', db);
+        const Collection = await getConnect();
         await Collection.findOneAndDelete({ _id: uid });
         const data = await Collection.find({});
-        mongoose.models = {};
         return res.render('main', { data });
     } catch (err) {
         console.log(err);
@@ -115,10 +105,8 @@ app.get('/del', async (req, res) => {
 app.get('/update', async (req, res) => {
     try {
         const uid = req.query.uid;
-        const db = await getConnect();
-        const Collection = mongoose.model('listdata', db);
+        const Collection = await getConnect();
         const rs = await Collection.find({ _id: uid });
-        mongoose.models = {};
         return res.render('update', { rs });
     } catch (err) {
         console.log(err);
@@ -136,8 +124,7 @@ app.get('/updatedata', async (req, res) => {
     const notes = req.query.t2;
     const date = req.query.t4;
 
-    const db = await getConnect();
-    const Collection = mongoose.model('listdata', db);
+    const Collection = await getConnect();
     await Collection.updateOne(
         { _id: uid },
         {
@@ -150,9 +137,7 @@ app.get('/updatedata', async (req, res) => {
             },
         }
     );
-    mongoose.models = {};
     const data = await Collection.find({});
-    mongoose.models = {};
     return res.render('main', { data });
 });
 
