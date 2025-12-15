@@ -1,0 +1,1 @@
+console.log('Test suite skipped: no automated tests available.');
