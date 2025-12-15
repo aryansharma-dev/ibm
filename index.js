@@ -74,7 +74,11 @@ app.get('/', async (req, res) => {
 
 app.get('/Create', async (req, res) => {
     if (req.query.s1 != null) {
-        const id = req.query.t;
+        const id = Number(req.query.t);
+        if (Number.isNaN(id)) {
+            const msg = 'Please enter a numeric ID';
+            return res.render('create', { msg });
+        }
         const name = req.query.t0;
         const topic = req.query.t1;
         const notes = req.query.t2;
@@ -118,7 +122,12 @@ app.get('/update', async (req, res) => {
 // Update route
 app.get('/updatedata', async (req, res) => {
     const uid = req.query.t3;
-    const gid = req.query.t;
+    const gid = Number(req.query.t);
+    if (Number.isNaN(gid)) {
+        const Collection = await getConnect();
+        const data = await Collection.find({});
+        return res.render('main', { data });
+    }
     const name = req.query.t0;
     const topic = req.query.t1;
     const notes = req.query.t2;

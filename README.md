@@ -1,5 +1,5 @@
 🔐 Secure Notepad Web Application
-Presented by: Aryan Sharma
+Presented by: Aryan Sharma Fonder by tinyMillion 
 Authentication Powered by: IBM Cloud App ID
 
 📌 Project Overview
