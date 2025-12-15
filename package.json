@@ -7,13 +7,13 @@
     "start": "node index.js",
     "test": "node test.js"
   },
-  keywords": [
+  "keywords": [
     "notes",
     "express",
     "mongo",
     "ejs"
   ],
-  "author": "",
+  "author": "Aryan Sharma",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.10",

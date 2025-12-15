@@ -86,4 +86,4 @@ CI/CD pipeline integration
 3. Start the development server:
    - `npm start`
 
-The application will be available at `http://localhost:5000` and will render the EJS views defined in the `views` directory.
+The application will be available at `http://localhost:5000` and will render the EJS views defined in the `views` directory.w

@@ -29,4 +29,5 @@ async function getConnect() {
 
     return mongoose.model('listdata');
 }
+
 module.exports = getConnect;
