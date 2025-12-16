@@ -17,7 +17,7 @@ Ensure smooth user experience and responsive UI.
 🛠️ Tools & Technologies
 Frontend: EJS (HTML + CSS + JavaScript)
 Demo link 
-`https://drive.google.com/file/d/1wxWh3H6IuF93p-XmPBMt_ZlGu9xi5BDA/view?usp=drivesdk`
+`[https://drive.google.com/file/d/1wxWh3H6IuF93p-XmPBMt_ZlGu9xi5BDA/view?usp=drivesdk](https://drive.google.com/file/d/1c6ENqH690exwF8dOUzNRsrlV1kZTf6wn/view?usp=drive_link)`
 
 Backend: Node.js, Express.js
 
@@ -90,4 +90,3 @@ CI/CD pipeline integration
 
 The application will be available at `http://localhost:5000` and will render the EJS views defined in the `views` directory.w
 
-🚀 Demo video link `[https://drive.google.com/file/d/1wxWh3H6IuF93p-XmPBMt_ZlGu9xi5BDA/view?usp=drivesdk](https://drive.google.com/drive/u/1/folders/1ORMPI4SPe4H495lOx1vdz61LtOpAq7pk)`
