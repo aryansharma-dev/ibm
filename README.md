@@ -16,8 +16,8 @@ Ensure smooth user experience and responsive UI.
 
 🛠️ Tools & Technologies
 Frontend: EJS (HTML + CSS + JavaScript)
-Demo link 
-`[https://drive.google.com/file/d/1wxWh3H6IuF93p-XmPBMt_ZlGu9xi5BDA/view?usp=drivesdk](https://drive.google.com/file/d/1c6ENqH690exwF8dOUzNRsrlV1kZTf6wn/view?usp=drive_link)`
+
+Demo link:https://drive.google.com/file/d/1c6ENqH690exwF8dOUzNRsrlV1kZTf6wn/view?usp=drive_link
 
 Backend: Node.js, Express.js
 
